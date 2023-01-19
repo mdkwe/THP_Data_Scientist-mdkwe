@@ -201,5 +201,5 @@ def perform(array)
 end 
 
 
-#perform(handle_journalist)
+perform(handle_journalist)
 
