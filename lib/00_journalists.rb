@@ -139,25 +139,16 @@ def start_MAJ_handle(array)
       
       # initialisation
       count_output = 0
-      value_output = []
-      output = []
 
       # Etape 1 : créer la liste des handles commençant par une majuscule 
       
       for i in 0 ..(length - 1)
-            test = ((array[i].size() - 1) == length_handle)
+            test = (array[i][1]).match?(/[A-Z]/)
             if test == true then
-                  value_output.append([array[i],i]) # stocke le couple (handle, position) pour chaque handle qui vérifie la condition 
+                  count_output += 1
             end
       end
-
-      # Etape 2 : on compte le nombre de handle 
-      count_output = count_handle(output)
-      
-      # On stock l'étape 1 et 2 dans un array nommé "output"
-      output = [count_output, value_output]
-      
-      return output 
+      return count_output
 end
 
 def perform(array)
@@ -187,7 +178,8 @@ def perform(array)
       puts
 
       puts "Q.4. Combien commencent par une majuscule (première lettre juste après le @) ?"
-      
+      res_4 = start_MAJ_handle(array)
+      puts "> bot : Dans le tableau de #{nb_journalist} handle de journalistes, il y a #{res_4} handle commençant par une majuscule. " 
       puts
       
       puts "Q.5. Trie la liste de handle par ordre alphabétique."
@@ -209,5 +201,5 @@ def perform(array)
 end 
 
 
-perform(handle_journalist)
+#perform(handle_journalist)
 
